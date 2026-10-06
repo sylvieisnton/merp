@@ -1,0 +1,18 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"noEmit": false,
+		"allowImportingTsExtensions": false,
+		"declaration": true,
+		"emitDeclarationOnly": true,
+		"outDir": "dist",
+		"types": [
+			"node"
+		]
+	},
+	"include": [
+		"./anastomosing.ts",
+		"./microdetectors.ts",
+		"./millionairesses.ts"
+	]
+}
