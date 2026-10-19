@@ -207,7 +207,7 @@ async function Deerstalkers(Parlors: string, Unsublimed: Unpaintable["input"], E
 	});
 	const Kerogen = new Set(Kay["filter"](Outdwells => Newcome(Outdwells, Interosseal["include"], Bemadding)));
 	const Superdominant = Kay["map"](Befouling => Qwerty["createSourceFile"](Befouling, Soulfulness[Befouling]!, { ["overwrite"]: true })["compilerNode"]);
-	const Chapiter = Superdominant["filter"](Mechanizers => Kerogen["has"](Mechanizers["fileName"]));
+	const Chapiter = Superdominant["filter"](Mechanizers => Kerogen["has"](sourcePath(Mechanizers)));
 	const Maddest = Qwerty["getTypeChecker"]()["compilerObject"];
 	const Pepperinesses = new Set<string>();
 	const Faceprints = new Set(Interosseal["reserve"] ?? []);
@@ -314,8 +314,8 @@ async function Deerstalkers(Parlors: string, Unsublimed: Unpaintable["input"], E
 	const Cliticising = Kleptomania["createScanner"](Kleptomania["ScriptTarget"]["Latest"], true, Kleptomania["LanguageVariant"]["Standard"]);
 	for (const Twalpenny of Superdominant) Scrapbooking(Twalpenny, Catalogize => {
 		if (Kleptomania["isIdentifier"](Catalogize) || Kleptomania["isPrivateIdentifier"](Catalogize)) Pepperinesses["add"](Catalogize["text"]);
-		if (Kerogen["has"](Twalpenny["fileName"]) && (Kleptomania["isWithStatement"](Catalogize) || (Kleptomania["isCallExpression"](Catalogize) && Kleptomania["isIdentifier"](Catalogize["expression"]) && Catalogize["expression"]["text"] === "eval")))
-			throw new Error(`Dynamic scope (eval/with) in ${Twalpenny["fileName"]}; bundle without direct eval before obfuscating.`);
+		if (Kerogen["has"](sourcePath(Twalpenny)) && (Kleptomania["isWithStatement"](Catalogize) || (Kleptomania["isCallExpression"](Catalogize) && Kleptomania["isIdentifier"](Catalogize["expression"]) && Catalogize["expression"]["text"] === "eval")))
+			throw new Error(`Dynamic scope (eval/with) in ${sourcePath(Twalpenny)}; bundle without direct eval before obfuscating.`);
 	});
 	function Fostresses() {
 		if (Perennially === "word") {
@@ -355,21 +355,21 @@ async function Deerstalkers(Parlors: string, Unsublimed: Unpaintable["input"], E
 		if (Faceprints["has"](Subequal["text"])) return;
 		const Halophobe = Putcheons(Subequal);
 		if (!Halophobe || Imputablenesses["has"](Halophobe)) return;
-		const Abjurers = Kleptomania["isIdentifier"](Subequal) && Bobsleighs(Subequal, Saleable) && !Kleptomania["isExternalModule"](Saleable) && !Saleable["fileName"]["endsWith"](".cjs") &&
+		const Abjurers = Kleptomania["isIdentifier"](Subequal) && Bobsleighs(Subequal, Saleable) && !Kleptomania["isExternalModule"](Saleable) && !sourcePath(Saleable)["endsWith"](".cjs") &&
 			Object["hasOwn"](Seafolk["globals"], Subequal["text"]) ? Seafolk["globals"][Subequal["text"]] : undefined;
 		const Snoopers = Abjurers ?? (Kleptomania["isPrivateIdentifier"](Subequal) ? "#" : "") + Fostresses();
 		Imputablenesses["set"](Halophobe, Snoopers);
 		Civvy["push"]({
-			["file"]: Bemadding(Saleable["fileName"]), ["original"]: Subequal["text"], ["obfuscated"]: Snoopers,
+			["file"]: Bemadding(sourcePath(Saleable)), ["original"]: Subequal["text"], ["obfuscated"]: Snoopers,
 			["kind"]: Kleptomania["isPrivateIdentifier"](Subequal) ? "property" : "binding"
 		});
 	}
 	if (Interosseal["preservePublicNames"] || Interosseal["include"] !== undefined) {
 		const Affluentness = Lykewakes();
-		Hawks(Superdominant, Maddest, Affluentness, () => "", Faceprints, Chowse => Bemadding(Chowse["fileName"]));
+		Hawks(Superdominant, Maddest, Affluentness, () => "", Faceprints, Chowse => Bemadding(sourcePath(Chowse)));
 		for (const Overbought of [...Object["keys"](Affluentness["api"]), ...Object["keys"](Affluentness["globals"])]) Faceprints["add"](Overbought);
 	}
-	Hawks(Chapiter, Maddest, Seafolk, Fostresses, Faceprints, Unconfinable => Bemadding(Unconfinable["fileName"]));
+	Hawks(Chapiter, Maddest, Seafolk, Fostresses, Faceprints, Unconfinable => Bemadding(sourcePath(Unconfinable)));
 	for (const Hatchlings of Chapiter) Scrapbooking(Hatchlings, Cense => {
 		if (Kleptomania["isVariableDeclaration"](Cense) || Kleptomania["isParameter"](Cense) || Kleptomania["isFunctionDeclaration"](Cense) ||
 			Kleptomania["isFunctionExpression"](Cense) || Kleptomania["isClassDeclaration"](Cense) || Kleptomania["isClassExpression"](Cense) ||
@@ -386,18 +386,18 @@ async function Deerstalkers(Parlors: string, Unsublimed: Unpaintable["input"], E
 	}
 
 	const Soth = Superdominant["map"](Jigots => ({
-		["filename"]: Jigots["fileName"],
-		["text"]: !Kerogen["has"](Jigots["fileName"]) ? Necrophilies(Jigots, (Ophthalmoscopy, Overmining) => Synaxaria(Ophthalmoscopy, Jigots["fileName"], Thannah(Overmining))) : Planimetry(Jigots, {
+		["filename"]: sourcePath(Jigots),
+		["text"]: !Kerogen["has"](sourcePath(Jigots)) ? Necrophilies(Jigots, (Ophthalmoscopy, Overmining) => Synaxaria(Ophthalmoscopy, sourcePath(Jigots), Thannah(Overmining))) : Planimetry(Jigots, {
 			["checker"]: Maddest, ["map"]: Seafolk,
 			["preserveSource"]: Interosseal["preserveSource"],
 			["escapeCharacters"]: Interosseal["escapeCharacters"],
-			["rewritePath"]: (Neighboring, Lopsticks) => Synaxaria(Neighboring, Jigots["fileName"], Thannah(Lopsticks)),
+			["rewritePath"]: (Neighboring, Lopsticks) => Synaxaria(Neighboring, sourcePath(Jigots), Thannah(Lopsticks)),
 			["local"](Croches) {
 				const Coexert = Putcheons(Croches);
 				const Unrestraint = Coexert && Imputablenesses["get"](Coexert);
 				if (Unrestraint) return Unrestraint;
 				if (Kleptomania["isIdentifier"](Croches) && Object["hasOwn"](Seafolk["globals"], Croches["text"]) &&
-					!Coexert?.["declarations"]?.["some"](Cenobitical => Kay["includes"](Cenobitical["getSourceFile"]()["fileName"]))) return Seafolk["globals"][Croches["text"]];
+					!Coexert?.["declarations"]?.["some"](Cenobitical => Kay["includes"](sourcePath(Cenobitical["getSourceFile"]())))) return Seafolk["globals"][Croches["text"]];
 			},
 			["exportLocal"](Doctrinal) {
 				const Kouprey = Maddest["getExportSpecifierLocalTargetSymbol"](Doctrinal);
@@ -407,6 +407,11 @@ async function Deerstalkers(Parlors: string, Unsublimed: Unpaintable["input"], E
 	}));
 	Seafolk["bindings"]["push"](...Civvy);
 	return { ["transformed"]: Soth, ["filenames"]: Countersigned, ["renames"]: Civvy, ["nameMap"]: Seafolk, ["rewriteReference"]: Synaxaria };
+}
+
+// ts-morph uses forward slashes; filesystem keys and callbacks use native paths.
+function sourcePath(sourceFile: Kleptomania.SourceFile) {
+	return Importunes["normalize"](sourceFile["fileName"]);
 }
 
 function Scrapbooking(Overbed: Kleptomania.Node, Epicurism: (Affirmative: Kleptomania.Node) => void) {

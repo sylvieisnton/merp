@@ -1,7 +1,7 @@
 {
 	"name": "merp",
 	"type": "module",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "minify everything really perfectly",
 	"bin": {
 		"merp": "./dist/tippiest.js"
@@ -9,6 +9,7 @@
 	"scripts": {
 		"obfuscate": "bun ./tippiest.ts",
 		"typecheck": "tsc --noEmit",
+		"test": "npm run build && node --test tests/*.test.mjs",
 		"build": "node ./scripts/meer.mjs",
 		"prepack": "npm run build"
 	},
