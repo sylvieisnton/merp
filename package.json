@@ -1,10 +1,10 @@
 {
-	"name": "merp",
+	"name": "merp-obfuscator",
 	"type": "module",
 	"version": "0.1.1",
 	"description": "minify everything really perfectly",
 	"bin": {
-		"merp": "./dist/tippiest.js"
+		"merp": "./dist/cli.js"
 	},
 	"scripts": {
 		"obfuscate": "bun ./tippiest.ts",
